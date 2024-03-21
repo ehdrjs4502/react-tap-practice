@@ -1,15 +1,16 @@
 import DockLayout from "rc-dock";
 import React, { useRef, useState } from "react";
 import "./styles/rc-dock-dark.css"; // 다크모드(커스텀)
+import Test from "./components/test";
 // import "rc-dock/dist/rc-dock.css"; // 기본모드
 
 //dock-content-animated 삭제
 
 // 탭 형식에 맞게 만드는 함수
-function getTab(id, value) {
+function getTab(id, component) {
   return {
     id, // 탭의 고유한 ID
-    content: <div>{value}</div>, // 탭 내용
+    content: component, // 탭 내용
     title: id, // 탭 제목
   };
 }
@@ -21,7 +22,7 @@ function App() {
   // 탭 추가 함수
   const addTab = () => {
     setCount((prevCount) => prevCount + 1); // 탭 개수 증가
-    const newTab = getTab(`tab${count + 1}`, count + 1); // 새로운 탭 생성
+    const newTab = getTab(`tab${count + 1}`, <Test />); // 새로운 탭 생성
     dockLayoutRef.current.dockMove(newTab, "my_panel", "middle"); // 생성한 탭을 DockLayout에 추가
   };
 
