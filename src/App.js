@@ -1,7 +1,9 @@
 import DockLayout from "rc-dock";
 import React, { useRef, useState } from "react";
-import "rc-dock/dist/rc-dock-dark.css"; // 다크모드
+import "./styles/rc-dock-dark.css"; // 다크모드(커스텀)
 // import "rc-dock/dist/rc-dock.css"; // 기본모드
+
+//dock-content-animated 삭제
 
 // 탭 형식에 맞게 만드는 함수
 function getTab(id, value) {
